@@ -1,9 +1,16 @@
-# My Config Files
+# Vim and kitty terminal emulator config
 
-Here are my configs for vim et Kitty terminal
+Here is my config to make Vim as an IDE using kitty terminal
 
+* build-in bash terminal
+* NERDTree to navigate through working directory
+* Gruvbox theme
+* Droid Sans Mono Fonts
+  
+  
+![Alt text](<Screenshot from 2023-09-28 22-20-35.png>)
 
-#### Prerequisities
+#### Prerequisities:
 
 * Install Vim-PLug <pre>$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -11,7 +18,7 @@ Here are my configs for vim et Kitty terminal
 
 * To Use Droid Sans Mono fonts dowmload them [here](https://www.fontsquirrel.com/fonts/download/droid-sans) and add tts file to font-manager
 
-## How to use them
+## How to install
 
 * Clone the repo  <pre>$ git clone git@github.com:Antoineloiseau1/Configs.git'
 
@@ -28,4 +35,6 @@ Here are my configs for vim et Kitty terminal
 * Install Kitty <pre>$ sudo apt install kitty
 * Copy Kitty folder <pre>$ cp kitty/ ~/.config/
 
+## TIPS:
 
+You can use <ctrl + arrows> to navigate through different buffers
