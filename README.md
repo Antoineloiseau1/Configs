@@ -12,7 +12,7 @@ Here are my configs for vim et Kitty terminal
 2. Copy Vim folder content into .vim folder: <pre>$ cp -r \*/** ~/.vi
 3. Copy .vimrc to Home directory <pre>$ cp .vimrc ~/
 4. Install plugins in .vimrc file <pre>$ vim .vimrc  
-:PlugInstall<code>
+:PlugInstall
 
 ### Kitty Config
 
