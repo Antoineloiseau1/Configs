@@ -16,7 +16,7 @@ Here is my config to make Vim as an IDE using kitty terminal
 
 * Install Font manager <pre>$ sudo apt install font-manager
 
-* To Use Droid Sans Mono fonts dowmload them [here](https://www.fontsquirrel.com/fonts/download/droid-sans) and add tts file to font-manager
+* To Use Droid Sans Mono fonts download them [here](https://www.fontsquirrel.com/fonts/download/droid-sans) and add tts file to font-manager
 
 ## How to install
 
@@ -25,9 +25,9 @@ Here is my config to make Vim as an IDE using kitty terminal
 ### Vim config
 
 1. Go to Vim folder <pre>$ cd Vim
-2. Copy Vim folder content into .vim folder: <pre>$ cp -r \*/** ~/.vi
+2. Copy Vim folder content into .vim folder: <pre>$ cp -r \*/** ~/.vim
 3. Copy .vimrc to Home directory <pre>$ cp .vimrc ~/
-4. Install plugins in .vimrc file <pre>$ vim .vimrc  
+4. Install plugins in .vimrc file <pre>$ vim ~/.vimrc  
 :PlugInstall
 
 ### Kitty Config
