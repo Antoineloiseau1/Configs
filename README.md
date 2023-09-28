@@ -2,6 +2,15 @@
 
 Here are my configs for vim et Kitty terminal
 
+
+#### Prerequisities
+
+* Install Vim-PLug <pre>$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+* Install Font manager <pre>$ sudo apt install font-manager
+
+* To Use Droid Sans Mono fonts dowmload them [here](https://www.fontsquirrel.com/fonts/download/droid-sans) and add tts file to font-manager
+
 ## How to use them
 
 * Clone the repo  <pre>$ git clone git@github.com:Antoineloiseau1/Configs.git'
