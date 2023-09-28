@@ -16,11 +16,7 @@
 
 set nocompatible
 
-
-filetype on
-filetype plugin on
-filetype indent on
-syntax on
+syntax enable
 
 set nobackup
 set scrolloff=999
@@ -28,12 +24,11 @@ set nowrap
 set number
 set mouse=a
 set cursorline
-highlight CursorLine cterm=NONE ctermbg=000
 set shiftwidth=4
 set tabstop=4
 set showcmd
 set showmode
-
+set showmatch
 "searching options"
 set incsearch
 set smartcase
@@ -51,9 +46,13 @@ set wildignore=*.jpg,*.png,*.pdf
 
 call plug#begin('~/.vim/plugged')
 
-	Plug 'sheerun/vim-polyglot'
-	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-	Plug 'sainnhe/sonokai'
+	"Plug 'sheerun/vim-polyglot'"
+	"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}"
+	"Plug 'sainnhe/everforest'
+	"Plug 'crusoexia/vim-monokai'
+	Plug 'morhetz/gruvbox'
+	Plug 'preservim/nerdtree'
+	Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
@@ -61,11 +60,19 @@ call plug#end()
 
 " VIMSCRIPT -------------------------------------- {{{
 
+autocmd vimenter * ++nested colorscheme gruvbox
+autocmd VimEnter * NERDTree | wincmd p
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
 " allows use of folds "
 augroup filetype_vim
 	autocmd!
 	autocmd FileType vim setlocal foldmethod=marker
 augroup END
+
 
 "Display Cursoline only in active window
 augroup cursor_off
@@ -84,14 +91,11 @@ inoremap jj <esc>
 
 " COLORSCHEMES ----------------------------------------------------- {{{
 
-if has('termguicolors')
-	set termguicolors
-endif
+set termguicolors
+set background=dark
+let g:gruvbox_constrast_dark='hard'
+colorscheme gruvbox
 
-let g:sonokai_style = 'default'
-let g:sonokai_better_performance = 1
-
-colorscheme sonokai
 
 " }}}
 
