@@ -4,6 +4,7 @@ Here is my config to make Vim as an IDE using kitty terminal
 
 * build-in bash terminal
 * NERDTree to navigate through working directory
+* Use of Snippets
 * Gruvbox theme
 * Droid Sans Mono Fonts
   
@@ -16,7 +17,7 @@ Here is my config to make Vim as an IDE using kitty terminal
 
 * Install Font manager <pre>$ sudo apt install font-manager
 
-* To Use Droid Sans Mono fonts download them [here](https://www.fontsquirrel.com/fonts/download/droid-sans) and add tts file to font-manager
+* To Use Droid Sans Mono fonts download them [here](https://www.fontsquirrel.com/fonts/download/droid-sans) and add tts file to font-manager. (You can also use your favorit terminal)
 
 ## How to install
 
@@ -24,10 +25,8 @@ Here is my config to make Vim as an IDE using kitty terminal
 
 ### Vim config
 
-1. Go to Vim folder <pre>$ cd Vim
-2. Copy Vim folder content into .vim folder: <pre>$ cp -r \*/** ~/.vim
-3. Copy .vimrc to Home directory <pre>$ cp .vimrc ~/
-4. Install plugins in .vimrc file <pre>$ vim ~/.vimrc  
+1. Copy .vim folder and .vimrc to home directory: <pre>$ cp -r .vim ~/ && cp .vimrc ~/
+2. Install plugins in .vimrc file <pre>$ vim ~/.vimrc  
 :PlugInstall
 
 ### Kitty Config
@@ -37,4 +36,11 @@ Here is my config to make Vim as an IDE using kitty terminal
 
 ## TIPS:
 
-You can use <ctrl + arrows> to navigate through different buffers
+* You can use <ctrl + arrows> to navigate through different buffers  
+
+* Open terminal using: ",ot" (',' as key Leader by default)
+* You can use C++ snippets (see snippets definition in .vim/Ultisnips/cpp.snippets) ex:<pre>def+[tab] would result:  
+#ifnef [INPUT_FILENAME]_HPP
+#define [MIRROR_TO_FILE_NAME]_HPP
+   
+   #endif

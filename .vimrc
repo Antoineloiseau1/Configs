@@ -15,6 +15,7 @@
 " GENERAL SETTINGS --------------------------- {{{
 
 set nocompatible
+set encoding=utf8
 
 syntax enable
 
@@ -46,6 +47,12 @@ set wildignore=*.jpg,*.png,*.pdf
 
 call plug#begin('~/.vim/plugged')
 
+	"Plug 'majutsushi/tagbar'
+	"Plug 'ervandew/supertab'
+	"Plug 'BufOnly.vim'
+	"Plug 'wesQ3/vim-windowswap'
+	Plug 'SirVer/ultisnips'
+	"Plug 'honza/vim-snippets'
 	Plug 'sheerun/vim-polyglot'"
 	Plug 'morhetz/gruvbox'
 	Plug 'preservim/nerdtree'
@@ -65,8 +72,6 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-autocmd VimEnter * belowright terminal ++rows=13
-autocmd VimLeave * call jobstop(term_getjob())
 
 " allows use of folds "
 augroup filetype_vim
@@ -87,11 +92,15 @@ augroup END
 " MAPPING ---------------------------------------- {{{
 
 let mapleader=","
-nnoremap <C-left> <c-w>h
-nnoremap <C-right> <c-w>l
-nnoremap <C-down> <c-w>j
-nnoremap <C-up> <c-w>k
+nnoremap <A-left> <c-w>h
+nnoremap <A-right> <c-w>l
+nnoremap <A-down> <c-w>j
+nnoremap <A-up> <c-w>k
 nnoremap <C-`> ,ot
+nnoremap <C-left> <c-w><left>
+nnoremap <C-right> <c-w><right>
+nnoremap <C-up> <c-w><up>
+nnoremap <C-down> <c-w><down>
 nnoremap <F3> :NERDTreeToggle<cr>
 inoremap jj <esc>
 
@@ -118,3 +127,14 @@ set statusline+=\ row:\ %l\ col:\ %c
 set laststatus=2
 
 " }}}
+
+" UltiSnips Config ------------------------------------------------------------{{{
+
+	let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+	let g:UltiSnipsExpandTrigger="<tab>"
+	let g:UltiSnipsListSnippets="<C-tab>"
+	let g:UltiSnipsJumpForwardTrigger="<tab>"
+	let g:UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit="~/.git/snippets/"
+	let g:UltiSnipsEditSplit='vertical'
+
+"}}}

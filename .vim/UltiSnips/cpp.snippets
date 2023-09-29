@@ -1,0 +1,74 @@
+snippet def "#ifndef" b
+#ifndef ${1}_${2:HPP}
+# define $1_$2
+
+$0
+
+#endif
+endsnippet
+
+snippet inc "#include" b
+#include <${1:iostream}>
+$0
+endsnippet
+
+snippet out "std::cout" b
+std::cout << $0
+endsnippet
+
+snippet endl
+<< std::endl$0;
+endsnippet
+
+snippet try "try/catch" b
+try
+{
+	$0
+}
+catch(std::exception &e)
+{
+	std::cerr << e.what() << std::endl;
+}
+endsnippet
+
+
+snippet for "for loop" b
+for (${1})
+{
+	$0
+}
+endsnippet
+
+snippet main "int main" b
+int main(${1:void})
+{
+	$0
+	return 0;
+}
+endsnippet
+
+snippet class "class snippet" b
+class ${1:class} ${2}{
+
+	private:
+
+		$0
+	
+	public:
+
+		$1(void);
+		$1(${3:int n});
+		$1(const $1 & src);
+		const $1 & operator=(const $1 & rhs);
+		~$1(void);
+
+};
+endsnippet
+
+snippet str
+std::string
+endsnippet
+
+snippet iter
+std::${1:vector}<${2:int}>::iterator	${3:it}${4};$0
+endsnippet
